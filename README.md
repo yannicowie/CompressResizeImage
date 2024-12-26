@@ -33,4 +33,5 @@ Once you've added the component to your app, you need to configure its propertie
 | `maxPixels`  | Maximum dimension in pixels for the long side of the image  | 800  |
 | `buttonBackgroundColor` | Background color of the upload button | #4CAF50 |
 | `buttonTextColor` | Text color of the upload button | #FFFFFF |
+| `buttonTextSize` | Text size, and overall size, of the upload button | 32 |
 | `captureEnvironment` | If true, the camera will open directly for photo capture. Otherwise, the user can choose to upload an existing image from their device, or take a new on using the camera | false |
