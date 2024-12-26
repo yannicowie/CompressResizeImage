@@ -1,4 +1,5 @@
 # CompressResizeImage
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/0d720194-7cc5-4a4a-bf65-04475a9acccc" />
 
 ## Overview
 
