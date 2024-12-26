@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="pcf" constructor="CompressResizeImage" version="0.0.1" display-name-key="CompressResizeImage" description-key="Image compression and resizing custom control" control-type="standard" >
+    <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
+    If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
+    Example1:
+      <external-service-usage enabled="true">
+        <domain>www.Microsoft.com</domain>
+      </external-service-usage>
+    Example2:
+      <external-service-usage enabled="false">
+      </external-service-usage>
+    -->
+    <external-service-usage enabled="false">
+      <!--UNCOMMENT TO ADD EXTERNAL DOMAINS
+      <domain></domain>
+      <domain></domain>
+      -->
+    </external-service-usage>
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="imageData" display-name-key="Image Data" description-key="Image data in Base64 format" of-type="SingleLine.Text" usage="bound" required="true"/>
+    <property name="compressionQuality" display-name-key="Compression Quality" description-key="JPEG compression quality (0.0 to 1.0)" of-type="FP" usage="input" required="true"/>
+    <property name="maxPixels" display-name-key="Max Pixels" description-key="Maximum dimension in pixels for the long side of the image" of-type="Whole.None" usage="input" required="true"/>
+    <property name="buttonBackgroundColor" display-name-key="Button Background Color" description-key="Background color for the upload button" of-type="SingleLine.Text" usage="input" required="true"/> 
+    <property name="buttonTextColor" display-name-key="Button Text Color" description-key="Text color for the upload button" of-type="SingleLine.Text" usage="input" required="true"/>
+    <property name="captureEnvironment" display-name-key="Capture Environment" description-key="If true, the camera will open directly for photo capture" of-type="TwoOptions" usage="input" required="true"/>
+    <property name="buttonTextSize" display-name-key="Button Text Size" description-key="The size of the upload button text, in pixels" of-type="Whole.None" usage="input" required="true"/>
+    <property name="buttonTextLabel" display-name-key="Button Text Label" description-key="The label that appears on the upload button" of-type="SingleLine.Text" usage="input" required="true"/>
+<!--
+      Property node's of-type attribute can be of-type-group attribute.
+      Example:
+      <type-group name="numbers">
+        <type>Whole.None</type>
+        <type>Currency</type>
+        <type>FP</type>
+        <type>Decimal</type>
+      </type-group>
+      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
+    -->
+    <resources>
+      <code path="index.ts" order="1"/>
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/BlankProject.css" order="1" />
+      <resx path="strings/BlankProject.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
